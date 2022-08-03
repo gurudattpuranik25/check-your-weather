@@ -121,7 +121,7 @@ function TempData({ tempData }) {
                 className=" w-[50%] h-[15rem] rounded-full "
                 alt=""
               />
-              <span className="text-3xl font-semibold">{tempData.message}</span>
+              <span className="text-3xl font-semibold">No Data Found!!</span>
             </div>
           )}
         </div>

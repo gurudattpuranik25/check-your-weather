@@ -8,10 +8,11 @@ import TempData from "./TempData";
 function Main() {
   const [inputVal, setInputVal] = useState("");
   const [tempData, setTempData] = useState("");
+  const apiKey = process.env.REACT_APP_API_ID;
 
   const fetchData = (x) => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${x}&APPID=c23be5344812208f70d16b5774046c90&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${x}&APPID=${apiKey}&units=metric`
     )
       .then((res) => res.json())
       .then((data) => setTempData(data));
@@ -20,6 +21,7 @@ function Main() {
 
   const formHandler = (inputVal) => {
     inputVal === "" ? alert("Please enter a city") : fetchData(inputVal);
+    setInputVal("");
   };
 
   return (
